@@ -45,11 +45,3 @@ class CinemaHall(models.Model):
     name = models.CharField(max_length=255)
     rows = models.IntegerField()
     seats_in_row = models.IntegerField()
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(
-                fields=["name"],
-                name="unique_hall_name",
-            )
-        ]

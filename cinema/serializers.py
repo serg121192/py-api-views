@@ -30,11 +30,6 @@ class GenreSerializer(serializers.Serializer):
     name = serializers.CharField(
         max_length=255,
         required=True,
-        validators=[
-            UniqueValidator(
-                queryset=Genre.objects.all()
-            )
-        ]
     )
 
     def create(self, validated_data):
@@ -51,11 +46,6 @@ class CinemaHallSerializer(serializers.Serializer):
     name = serializers.CharField(
         max_length=255,
         required=True,
-        validators=[
-            UniqueValidator(
-                queryset=CinemaHall.objects.all()
-            )
-        ]
     )
     rows = serializers.IntegerField()
     seats_in_row = serializers.IntegerField()

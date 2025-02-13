@@ -27,12 +27,12 @@ router.register("movies", MovieViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("halls/", hall_list, name="hall-list"),
-    path("halls/<int:pk>", hall_detail, name="hall-detail"),
+    path("cinema_halls/", hall_list, name="hall-list"),
+    path("cinema_halls/<int:pk>/", hall_detail, name="hall-detail"),
     path("actors/", ActorList.as_view(), name="actor-list"),
-    path("actors/<int:pk>", ActorDetail.as_view(), name="actor-detail"),
+    path("actors/<int:pk>/", ActorDetail.as_view(), name="actor-detail"),
     path("genres/", GenreList.as_view(), name="genre-list"),
-    path("genres/<int:pk>", GenreDetail.as_view(), name="genre-detail"),
+    path("genres/<int:pk>/", GenreDetail.as_view(), name="genre-detail"),
 ]
 
 app_name = "cinema"
